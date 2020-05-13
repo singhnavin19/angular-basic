@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-basic';
+  title = 'Navin Singh';
+  isStructuralTest=true;
+  btnClick(){
+    alert("i have clicked");
+  }
+  constructor(){
+    console.log("I am componenet ");
+  }
 }

@@ -2,15 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { NavTestComponent } from './nav-test/nav-test.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavTestComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,NavTestComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log("I am module");
+  }
+}
