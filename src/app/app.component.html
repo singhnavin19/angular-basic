@@ -1,8 +1,99 @@
-Hi {{title}}
-<div>
-    <h1>This is componenet directive example</h1>
-    <button (click)="btnClick()" >click me</button>
-</div>
-<div *ngIf="isStructuralTest">
-    <h1>This is structural directives example</h1>
+<div class="container">
+    <!-- Template Driven Form start here-->
+    <!--Reactive form Start here -->
+    <fieldset>
+        <legend>Reactive Form</legend>
+        <div class="form-bg">
+            <form [formGroup]='signUpForm' (ngSubmit)="postData(signUpForm)">
+                <input type="text" formControlName="fName" placeholder="First Name"><br><br>
+                <input type="text" formControlName="lName" placeholder="last Name"><br><br>
+                <input type="text" formControlName="emailId" placeholder="emailId"><br><br>
+                <input type="submit" value="post data" class="btn btn-primary">
+            </form>
+        </div>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Form Module Example</legend>
+        <!-- <div class="form-bg">
+            <form #regForm="ngForm" (ngSubmit)="SaveData(regForm)">
+                <input type="text" name="firstName" placeholder="First Name" ngModel><br><br>
+                <input type="text" name="lastName" placeholder="Last Name" ngModel><br><br>
+                <button class="btn btn-primary" type="submit">Save</button>
+            </form>
+
+        </div> -->
+    </fieldset>
+    <!-- Template Driven Form end here-->
+
+
+    <!--Reactive form end here -->
+App component start here <br>{{title}}
+    <div class="alert alert-info alert-dismissible fade show">
+        <strong>Info!</strong> Un-comments code from html for details.
+    </div>
+    <fieldset>
+        <legend>Directive Example</legend>
+        <!-- <div>
+            <h1>This is componenet directive example</h1>
+            <button (click)="btnClick()">click me</button>
+        </div>
+        <div *ngIf="isStructuralTest">
+            <h1>This is structural directives example</h1>
+        </div>
+        <div>
+            <h1 [ngStyle]="{'color':'red'}">This is Attribute directives example</h1>
+        </div> -->
+    </fieldset>
+    <fieldset>
+        <legend>ng For Example</legend>
+        <!-- <ol>
+            <li *ngFor="let student of students;let i=index">
+                {{student.name}} -{{i+1}}
+            </li>
+        </ol> -->
+    </fieldset>
+    <fieldset>
+        <legend>Two Way Data Binding</legend>
+        <!-- <input [(ngModel)]='twoWayData'><br>
+        {{twoWayData}} -->
+    </fieldset>
+    <fieldset>
+        <legend>Pipe Example</legend>
+        <fieldset>
+            <legend>Basic Example</legend>
+            <!-- Before Pipe value = {{pipeBasic}}<br>
+            After Pipe Value = {{pipeBasic | uppercase}} -->
+        </fieldset>
+        <fieldset>
+            <legend>Parameterized Pipe Example</legend>
+            <!-- before pipe ={{salaryPipeParameterized}}<br>
+            After pipe ={{salaryPipeParameterized|currency:"USD":true}} -->
+        </fieldset>
+        <fieldset>
+            <legend>Json Pipe Example</legend>
+            <!-- Before Json pipe anyDataArray {{anyDataArray}}<br>
+            After Json pipe anyDataArray|json{{anyDataArray|json}}<br> -->
+        </fieldset>
+        <fieldset>
+            <legend>Custome pipe Example</legend>
+            <!-- {{title|myPipe}} -->
+        </fieldset>
+    </fieldset>
+    <fieldset>
+        <legend>Router </legend>
+        <fieldset>
+            <legend>Router Link Example [[routerLink]="['/navTest']"]</legend>
+            <a [routerLink]="['/navTest']">navTest</a><br>
+            <a [routerLink]="['/navTest2']">navTest2</a>
+        </fieldset>
+        <fieldset>
+            <legend>Router redirect Example</legend>
+            <!-- <p>path:'',redirectTo:'navTest'</p> -->
+        </fieldset>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </fieldset>
 </div>
